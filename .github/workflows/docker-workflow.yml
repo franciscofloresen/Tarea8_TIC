@@ -23,4 +23,5 @@ jobs:
 
     # Paso 3: Ejecutar el contenedor
     - name: Ejecutar contenedor
-      run: docker run mi-calculadora
+      run: docker run mi-calculadora 5 3 suma
+

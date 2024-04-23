@@ -1,3 +1,5 @@
+import sys
+
 def suma(a, b):
     return a + b
 
@@ -14,12 +16,13 @@ def division(a, b):
         return "Error: División por cero."
 
 if __name__ == "__main__":
-    print("Mini Calculadora")
-    print("Ingrese dos números y la operación a realizar (suma, resta, multiplicación, división).")
+    if len(sys.argv) != 4:
+        print("Uso: script.py <numero1> <numero2> <operacion>")
+        sys.exit(1)
 
-    x = float(input("Ingrese el primer número: "))
-    y = float(input("Ingrese el segundo número: "))
-    operacion = input("Ingrese la operación: ").lower()
+    x = float(sys.argv[1])
+    y = float(sys.argv[2])
+    operacion = sys.argv[3].lower()
 
     if operacion == 'suma':
         resultado = suma(x, y)
@@ -33,3 +36,4 @@ if __name__ == "__main__":
         resultado = "Operación no válida."
 
     print(f"Resultado: {resultado}")
+
