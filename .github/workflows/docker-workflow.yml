@@ -1,0 +1,26 @@
+name: Ejecutar Calculadora Python en Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_run:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Paso 1: Checkout del código
+    - name: Checkout del repositorio
+      uses: actions/checkout@v2
+
+    # Paso 2: Construir la imagen de Docker
+    - name: Construir imagen Docker
+      run: docker build . -t mi-calculadora
+
+    # Paso 3: Ejecutar el contenedor
+    - name: Ejecutar contenedor
+      run: docker run mi-calculadora
