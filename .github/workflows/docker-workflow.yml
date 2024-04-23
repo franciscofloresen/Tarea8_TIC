@@ -1,4 +1,4 @@
-name: Ejecutar Calculadora Python en Docker
+name: Ejecutar Hola Mundo en Docker
 
 on:
   push:
@@ -19,9 +19,8 @@ jobs:
 
     # Paso 2: Construir la imagen de Docker
     - name: Construir imagen Docker
-      run: docker build . -t mi-calculadora
+      run: docker build . -t mi-hola-mundo
 
     # Paso 3: Ejecutar el contenedor
     - name: Ejecutar contenedor
-      run: docker run mi-calculadora 5 3 suma
-
+      run: docker run mi-hola-mundo

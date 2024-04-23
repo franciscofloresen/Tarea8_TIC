@@ -7,5 +7,5 @@ WORKDIR /app
 # Copiar los archivos necesarios al directorio de trabajo
 COPY script.py .
 
-# Establecer el comando predeterminado para ejecutar el script
+# Comando por defecto para ejecutar el script
 CMD ["python", "./script.py"]
